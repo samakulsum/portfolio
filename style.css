@@ -1,6 +1,36 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+
 body {
     margin: 0;
 }
+.wrapper {
+    background-color: yellow;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+/********************* */
+/* header */
+/********************* */
+header {
+    background-color: crimson;
+    padding: 14px 0;
+}
+header nav {
+    display: flex;
+    /* width: 20px; */
+    justify-content: end;
+
+}
+/********************* */
+/* footer */
+/********************* */
 footer {
     background-color: lightgray;
     text-align: center;
