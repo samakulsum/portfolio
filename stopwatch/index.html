@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stopwatch">
+        <h1 id="displayTime">00:00:00</h1>
+        <div class="buttons">
+            <img src="images/stop.png" onclick="watchStop()">
+            <img src="images/start.png" onclick="watchStart()">
+            <img src="images/reset.png" onclick="watchReset()">
+        </div>
+    </div>
+    <script>
+let second = 0;
+let minutes = 0;
+let hours = 0;
+let displayTime = document.getElementById("displayTime");
+let timer = null;
+
+function stopwatch() {
+    second++;
+    if (second === 60) {
+        second = 0;
+        minutes++;
+        if (minutes === 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    // Format time to be always two digits
+    displayTime.innerHTML = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(second).padStart(2, '0')}`;
+}
+
+function watchStart() {
+    if (timer !== null) {
+        clearInterval(timer);
+    }
+    timer = setInterval(stopwatch, 1000);
+}
+
+function watchStop() {
+    if (timer !== null) {
+        clearInterval(timer);
+        timer = null; // Reset the timer variable to avoid multiple intervals
+    }
+}
+
+function watchReset() {
+    clearInterval(timer);
+    timer = null; // Reset the timer variable
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    displayTime.innerHTML = "00:00:00";
+}
+
+  </script>
+</body>
+</html>
