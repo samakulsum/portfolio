@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        *{
+            background-color: pink;
+        }
+        h1 {
+            color: black;
+        }
+        input,button{
+            background-color: black;
+            color: aliceblue;
+            border: none;
+            border-radius: 4px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Table of Any Number</h1>
+    <input type="number" id="num">
+    <button id="btn">Generate</button>
+
+    <script>
+        let btnEl = document.getElementById('btn')
+            let numEl = document.getElementById('num')
+
+            btnEl.addEventListener('click', function () {
+                let n = numEl.value;
+                console.log(n)
+                let output = ''
+
+                for (let a = 1; a < 11; ++a) {
+                    // console.log('<p>' + n + ' x ' + a + ' = ' + n * a + '</p>')
+                    output += '<p>' + n + ' x ' + a + ' = ' + n * a + '</p>';
+                }
+
+                document.body.innerHTML += output;
+            })
+    </script>
+</body>
+</html>

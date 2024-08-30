@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Click Game</title>
+        <style>
+            * {
+                background-color: lavender;
+                cursor: pointer;
+            }
+            .ball {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: red;
+                position: absolute;
+            }
+
+            .score {
+                pointer-events: none;
+                user-select: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="score">Score: <span id="score">0</span></h1>
+        
+        <div id="ball" class="ball"></div>
+
+        <script>
+            let score = 0;
+
+            function moveBallRandomly() {
+                const ball = document.getElementById('ball');
+
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                // Calculate random positions, keeping the ball inside the window
+                const maxX = windowWidth - ball.offsetWidth;
+                const maxY = windowHeight - ball.offsetHeight;
+
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+
+                // Make random width & height for the ball
+                const randomSize = Math.floor(Math.random() * 100);
+
+                // Generate a random color
+                const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+                // Set the new color
+                ball.style.backgroundColor = randomColor;
+
+                // Set the new size
+                ball.style.width = randomSize + 'px';
+                ball.style.height = randomSize + 'px';
+
+
+                // Set the new position
+                ball.style.left = randomX + 'px';
+                ball.style.top = randomY + 'px';
+            }
+
+            function incrementScore() {
+                score++;
+                document.getElementById('score').textContent = score;
+            }
+
+            document.getElementById('ball').addEventListener('click', incrementScore);
+
+            // Move the ball every second
+            setInterval(moveBallRandomly, 1000);
+        </script>
+    </body>
+
+</html>
