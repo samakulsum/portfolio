@@ -108,16 +108,28 @@ header nav a:last-child {
 .projects .project .thumbnail.calculator {
     background-image: url('calculator/thumbnail.png');
 }
-.projects .project.thumbnail.cardform {
+.projects .project .thumbnail.cardform {
     background-image: url('cardform/thumbnail.png');
 }
-.projects .project.thumbnail.to do list{
-    background-image: url('to do list/thumbnail.png');
+.projects .project .thumbnail.to-do-list {
+    background-image: url('to-do-list/thumbnail.png');
 }
-.projects .project.thumbnail.card{
+.projects .project .thumbnail.card {
     background-image: url('card/thumbnail.png');
 }
-.projects .project.thumbnail.click-game{
+.projects .project .thumbnail.click-game {
+    background-image: url('click-game/thumbnail.png');
+}
+.projects .project .thumbnail.stopwatch {
+    background-image: url('stopwatch/thumbnail.png');
+}
+.projects .project .thumbnail.tables {
+    background-image: url('tables/thumbnail.png');
+}
+.projects .project .thumbnail.notes-website {
+    background-image: url('notes-website/thumbnail.png');
+}
+/* .projects .project.thumbnail.click-game{
     background-image: url('click-game/thumbnail.png');
 }
 .projects .project.thumbnail.stopwatch{
@@ -125,7 +137,7 @@ header nav a:last-child {
 }
 .projects .project.thumbnail.tables{
     background-image: url('tables/thumbnail.png');
-}
+} */
 .projects .project .info {
     display: flex;
     border-top: 1px solid grey;
